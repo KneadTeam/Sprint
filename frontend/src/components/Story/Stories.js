@@ -1,11 +1,11 @@
 import Story from "./story"
 
-function Stories( {stories, onDelete} ){
+function Stories( {stories, onEdit, onDelete} ){
 
     return (
         <div>
             {stories.map((story) => (
-                <Story story_id={story.id} story_name={story.name} points={story.points} onDelete={onDelete}/>
+                <Story story_id={story.id} story_name={story.name} points={story.points} onEdit={onEdit} onDelete={onDelete}/>
             ))}
         </div>
     )

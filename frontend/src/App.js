@@ -1,8 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import AddStory from "./components/AddStory/AddStory"
+import Overlay from './Components/Overlay/Overlay';
 import Stories from './components/Story/Stories';
-import Overlay from './components/Overlay/Overlay';
 import ProgressBar from "./components/Progress/progressbar";
 import SprintLogo from './sprint-logo.png';
 
@@ -22,37 +22,34 @@ function App() {
   // Number of User Stories
   // const total_user_stories = 0;
 
-  // Sample User Stories
   const [user_stories, setStories] = useState([
+    // Samples User Stories initially provided
     { 
       id: 0,
       name: "As a user, I can open the webpage.",
       points: 2,
-      state: false 
+      completed: false 
     },
     { 
       id: 1,
       name: "As a user, I can add a story.",
       points: 2,
-      state: false 
+      completed: false 
     },
     { 
       id: 2,
       name: "As a user, I can edit a story.",
       points: 2,
-      state: false 
+      completed: false 
     }
   ])
 
   // Add a User Story
   function addStory(new_story){
+    new_story.id = (user_stories.length + 1)
     setStories(user_stories => [...user_stories, new_story])
     console.log(new_story)
-
   }
-
-  // Edit a User Story
-  // TODO
 
   // Delete a User Story
   function deleteStory (id){
