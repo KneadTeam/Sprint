@@ -13,3 +13,21 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.add-story-button {
+  padding: 20px 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 174, 105, 1) 0%,
+    rgba(255, 173, 102, 1) 32%,
+    rgba(255, 132, 25, 1) 100%);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
+}

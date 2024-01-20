@@ -1,11 +1,11 @@
 import Story from "./story"
 
-function Stories( {stories, onToggleCheckbox, onDelete} ){
+function Stories( {stories, onToggleCheckbox, onEdit, onDelete} ){
 
     return (
         <div>
             {stories.map((story) => (
-                <Story key={story.id} story_id={story.id} story_name={story.name} points={story.points} onToggleCheckbox={onToggleCheckbox} onDelete={onDelete}/>
+                <Story story_id={story.id} story_name={story.name} points={story.points} onEdit={onEdit} onToggleCheckbox={onToggleCheckbox} onDelete={onDelete}/>
             ))}
         </div>
     )
