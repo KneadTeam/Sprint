@@ -10,41 +10,34 @@ function App() {
   // Overlay boolean
   const [isOverlay, setOverlay] = useState(false)
 
-  // Sample User Stories
   const [user_stories, setStories] = useState([
+    // Samples User Stories initially provided
     { 
       id: 0,
       name: "As a user, I can open the webpage.",
       points: 2,
-      state: false 
+      completed: false 
     },
     { 
       id: 1,
       name: "As a user, I can add a story.",
       points: 2,
-      state: false 
+      completed: false 
     },
     { 
       id: 2,
       name: "As a user, I can edit a story.",
       points: 2,
-      state: false 
+      completed: false 
     }
   ])
 
   // Add a User Story
   function addStory(new_story){
-    new_story.id = (user_stories.length + 3) // Remove +3 if removing Sample Users
+    new_story.id = (user_stories.length + 1)
     setStories(user_stories => [...user_stories, new_story])
     console.log(new_story)
   }
-
-  // Edit a User Story
-  // function editStory(id, edited_story){
-  //   edited_story.id = id
-  //   setStories(user_stories => [...user_stories, edited_story])
-  //   console.log(edited_story)
-  // }
 
   // Delete a User Story
   function deleteStory (id){
