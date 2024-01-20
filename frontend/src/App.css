@@ -20,7 +20,11 @@
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  background: rgb(213, 120, 39);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 174, 105, 1) 0%,
+    rgba(255, 173, 102, 1) 32%,
+    rgba(255, 132, 25, 1) 100%);
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
   font-size: 20px;

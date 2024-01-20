@@ -73,7 +73,7 @@ function App() {
 
       <div className="container">
         <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
-        <ProgressBar value={progress}/>
+        <ProgressBar value={40}/>
         <button className='add-story-button' onClick={() => setOverlay(true)}>Add User Story</button>
         <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
           <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
