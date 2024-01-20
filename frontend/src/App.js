@@ -1,9 +1,9 @@
 import './App.css';
 import { useState } from 'react';
-import AddStory from "./Components/AddStory/AddStory"
-import Overlay from './Components/Overlay/Overlay';
-import Stories from './Components/Story/Stories';
-import PBar from "./Components/Progress/PBar"
+import AddStory from "./components/AddStory/AddStory"
+import Overlay from './components/Overlay/Overlay';
+import Stories from './components/Story/Stories';
+import PBar from "./components/Progress/PBar"
 
 function App() {
 
