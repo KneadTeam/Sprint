@@ -1,10 +1,12 @@
 import Story from "./Story"
 
-function Stories( ){
+function Stories( {stories, onDelete} ){
 
     return (
         <div>
-            <Story story_text='As a blah i want to blah' points="1" checkbox={true} ></Story>
+            {stories.map((story) => (
+                <Story story_id={story.id} story_name={story.name} checkbox={story.state} onDelete={onDelete}/>
+            ))}
         </div>
     )
 }
