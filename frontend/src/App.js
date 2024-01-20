@@ -34,13 +34,17 @@ function App() {
 
   // Add a User Story
   function addStory(new_story){
+    new_story.id = (user_stories.length + 3) // Remove +3 if removing Sample Users
     setStories(user_stories => [...user_stories, new_story])
     console.log(new_story)
-
   }
 
   // Edit a User Story
-  // TODO
+  // function editStory(id, edited_story){
+  //   edited_story.id = id
+  //   setStories(user_stories => [...user_stories, edited_story])
+  //   console.log(edited_story)
+  // }
 
   // Delete a User Story
   function deleteStory (id){
