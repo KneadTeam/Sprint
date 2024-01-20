@@ -1,11 +1,21 @@
 import './App.css';
-import { useState } from 'react';
-import AddStory from "./components/AddStory/AddStory";
-import Stories from "./components/Story/Stories";
-import PBar from "./components/Progress/PBar";
+import { useState, useEffect } from 'react';
+import AddStory from "./components/AddStory/AddStory"
+import Stories from './components/Story/Stories';
+import ProgressBar from "./components/Progress/progressbar";
+import SprintLogo from './sprint-logo.png';
 
 function App() {
-  
+
+  // progress bar 
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+
+    return () => {
+      
+    }
+  }, [progress]);
+
   // Number of User Stories
   // const total_user_stories = 0;
 
@@ -50,8 +60,10 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="container">
-        <PBar></PBar>
+        <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
+        <ProgressBar value={progress}/>
         <AddStory onAdd={addStory}></AddStory>
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
