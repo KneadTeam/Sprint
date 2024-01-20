@@ -1,5 +1,6 @@
 // CONTENTS OF THIS SHOULD BE ON SEPARATE PAGE
 import { useState } from "react";
+import "./AddStory.css"
 
 function AddStory({ onAdd, cancelAdd }) {
   const [user_story, setStory] = useState('');
