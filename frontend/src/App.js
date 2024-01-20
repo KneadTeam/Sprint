@@ -4,7 +4,7 @@ import AddStory from "./components/AddStory/AddStory"
 import Overlay from './components/Overlay/Overlay';
 import Stories from './components/Story/Stories';
 import ProgressBar from "./components/Progress/progressbar";
-import SprintLogo from './sprint-logo.png';
+import SprintLogo from "./assets/sprint-logo.png"
 
 function App() {
 
