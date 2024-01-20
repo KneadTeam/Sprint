@@ -1,7 +1,6 @@
 import './App.css';
 import { useState } from 'react';
 import AddStory from "./components/AddStory/AddStory"
-// import Story from "./Components/Story/Story"
 import Stories from './components/Story/Stories';
 import ProgressBar from "./components/Progress/progressbar";
 

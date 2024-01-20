@@ -1,4 +1,4 @@
-import Story from "./Story"
+import Story from "./story"
 
 function Stories( {stories, onDelete} ){
 
