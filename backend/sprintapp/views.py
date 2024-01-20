@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
+from django.db.models import Sum
+
 
 from .serializers import UserStorySerializer
 from .models import UserStory
@@ -23,6 +25,24 @@ class StoriesAPIView(ListAPIView):
 
     def get_queryset(self):
         return UserStory.objects.all().order_by("completed")
+    
+class ProgressApiView(APIView):
+    def get(self, request, *args, **kwargs):
+        total_points = UserStory.objects.aggregate(Sum('points'))['points__sum'] or 0
+        completed_stories = UserStory.objects.filter(completed=True).aggregate(Sum('points'))['points__sum']
+        completed_percent = completed_stories/total_points*100
+        
+        integer_part = int(completed_percent)
+        decimal_part = completed_percent - integer_part
+
+        if decimal_part >= 0.5:
+            completed_percent =  round(completed_percent + 0.5)  # Round up
+        else:
+            completed_percent =  round(completed_percent)  # Round down
+        
+        return Response({
+            'completed_percent': completed_percent  
+        })
 
 class UpdateStoryApiView(APIView):
     """
