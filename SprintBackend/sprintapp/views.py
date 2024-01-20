@@ -55,3 +55,8 @@ class UpdateStoryApiView(APIView):
             serializer.save()
             return Response(serializer.data, status=201)
         return Response(status=400, data=serializer.errors)
+
+    def delete(self, request, *args, **kwargs):
+        user_story = get_object_or_404(UserStory, id=self.kwargs["story_id"])
+        user_story.delete()
+        return Response(status=204)
