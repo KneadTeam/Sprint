@@ -1,14 +1,23 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddStory from "./components/AddStory/AddStory"
-import Overlay from './components/Overlay/Overlay';
 import Stories from './components/Story/Stories';
-import PBar from "./components/Progress/PBar"
+import ProgressBar from "./components/Progress/progressbar";
+import SprintLogo from './sprint-logo.png';
 
 function App() {
 
-  // Overlay boolean
-  const [isOverlay, setOverlay] = useState(false)
+  // progress bar 
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+
+    return () => {
+      
+    }
+  }, [progress]);
+
+  // Number of User Stories
+  // const total_user_stories = 0;
 
   // Sample User Stories
   const [user_stories, setStories] = useState([
@@ -50,7 +59,9 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="container">
+<<<<<<< HEAD
         {/* Progress Bar */}
         <PBar></PBar>
 
@@ -61,6 +72,11 @@ function App() {
         </Overlay>
 
         {/* User Stories */}
+=======
+        <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
+        <ProgressBar value={progress}/>
+        <AddStory onAdd={addStory}></AddStory>
+>>>>>>> 5026c1a7e859131eba29646a1beaff8c254ae388
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>
