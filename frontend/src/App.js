@@ -7,6 +7,9 @@ import PBar from "./Components/Progress/PBar"
 
 function App() {
   
+  // Number of User Stories
+  // const total_user_stories = 0;
+
   // Sample User Stories
   const [user_stories, setStories] = useState([
     { 
@@ -29,6 +32,17 @@ function App() {
     }
   ])
 
+  // Add a User Story
+  function addStory(new_story){
+    setStories(user_stories => [...user_stories, new_story])
+    // console.log('added user story: '+ new_story)
+    console.log(new_story)
+
+  }
+
+  // Edit a User Story
+  // TODO
+
   // Delete a User Story
   function deleteStory (id){
     setStories(user_stories.filter((user_story) => user_story.id !== id))
@@ -39,7 +53,7 @@ function App() {
     <div className="App">
       <div className="container">
         <PBar></PBar>
-        <AddStory></AddStory>
+        <AddStory onAdd={addStory}></AddStory>
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>
