@@ -34,3 +34,24 @@ class UpdateStoryApiView(APIView):
         if serializer.is_valid():
             return Response(serializer.data, status=200)
         return Response(status=400, data=serializer.errors)
+
+    def put(self, request, *args, **kwargs):
+        user_story = get_object_or_404(UserStory, id=self.kwargs["story_id"])
+        serializer = UserStorySerializer(user_story, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=200)
+        return Response(status=400, data=serializer.errors)
+
+    def post(self, request, *args, **kwargs):
+        # Unique id is required
+        try:
+            user_story = UserStory.objects.create(id=self.kwargs["story_id"])
+        except:
+            return Response({"detail": "Invalid data: a unique id is required."}, status=400)
+
+        serializer = UserStorySerializer(user_story, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(status=400, data=serializer.errors)
