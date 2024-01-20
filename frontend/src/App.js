@@ -1,8 +1,10 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {motion} from 'framer-motion';
 import AddStory from "./components/AddStory/AddStory"
 import Stories from './components/Story/Stories';
 import ProgressBar from "./components/Progress/progressbar";
+import SprintLogo from './sprint-logo.png';
 
 function App() {
 
@@ -59,8 +61,10 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="container">
-        <ProgressBar value={progress}/>
+        <img src={SprintLogo} alt="sprint logo" style={{ width: "30%", height: "auto", display: 'block', marginLeft: 'auto', marginRight: 'auto' }}/>
+        <ProgressBar value={40}/>
         <AddStory onAdd={addStory}></AddStory>
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>

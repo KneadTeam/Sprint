@@ -7,6 +7,8 @@
     flex-direction: row;
     justify-content: start;
     align-items: stretch;
+    margin-bottom: 5%;
+    margin-top: 2%;
 
     border-radius: 60px;
     background-color: #494b52;
@@ -24,4 +26,9 @@
         rgba(255, 173, 102, 1) 32%,
         rgba(255, 132, 25, 1) 100%
     );
+}
+
+.progressbar-title {
+    font-weight: bold;
+    font-size: larger;
 }

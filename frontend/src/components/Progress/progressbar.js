@@ -4,6 +4,9 @@ import {motion} from "framer-motion"
 function ProgressBar({value}) {
     return (
         <div className="progressbar-container">
+            <div className="progressbar-title">
+                Progress
+            </div>
             <div className="progressbar">
                 <motion.div 
                     className="bar" 
