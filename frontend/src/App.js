@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import AddStory from "./components/AddStory/AddStory"
 import Stories from './components/Story/Stories';
+import Overlay from './components/Overlay/Overlay';
 import ProgressBar from "./components/Progress/progressbar";
 import SprintLogo from './sprint-logo.png';
 
@@ -15,6 +16,8 @@ function App() {
       
     }
   }, [progress]);
+
+  const [isOverlay, setOverlay] = useState(false);
 
   // Number of User Stories
   // const total_user_stories = 0;
@@ -44,7 +47,6 @@ function App() {
   // Add a User Story
   function addStory(new_story){
     setStories(user_stories => [...user_stories, new_story])
-    // console.log('added user story: '+ new_story)
     console.log(new_story)
 
   }
@@ -64,7 +66,10 @@ function App() {
       <div className="container">
         <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
         <ProgressBar value={progress}/>
-        <AddStory onAdd={addStory}></AddStory>
+        <button onClick={() => setOverlay(true)}>Add User Story</button>
+        <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
+          <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
+        </Overlay>
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>
