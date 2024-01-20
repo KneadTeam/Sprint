@@ -1,4 +1,4 @@
-
+import Overlay from "../Overlay/Overlay";
 
 function PBar() {
     return (
@@ -8,6 +8,7 @@ function PBar() {
             <p>
                 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| &emsp;
                 <button>Add User Story</button>
+                <Overlay isOpen={true}></Overlay>
             </p>
         </div>
     )
