@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+// import { useState } from 'react';
+import AddStory from "./Components/AddStory/AddStory"
+// import Story from "./Components/Story/Story"
+import Stories from './Components/Story/Stories';
+import PBar from "./Components/Progress/PBar"
 
 function App() {
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <AddStory></AddStory>
+        <Stories></Stories>
+        <PBar></PBar>
+      </div>
     </div>
   );
 }

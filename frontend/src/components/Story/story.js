@@ -1,15 +1,13 @@
-import styled from 'styled-components'
 
-function story() {
+function Story ( {story_id, story_text, points, checkbox} ){
     return (
-        <InputStyled>
-            <div></div>
-        </InputStyled>
+        <div className="story">
+            <h3> User Story</h3>
+            <p> {story_text} {points} <input type="checkbox" checked={checkbox} /> </p>                
+        </div>
     )
 }
-  
-const InputStyled = styled.div`
-// Put Styles here
-`;
 
-export default story;
+
+
+export default Story;
