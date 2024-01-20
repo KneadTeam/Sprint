@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-function story() {
+function progress_bar() {
     return (
         <InputStyled>
             <div></div>
@@ -12,4 +12,4 @@ const InputStyled = styled.div`
 // Put Styles here
 `;
 
-export default story;
+export default progress_bar;
