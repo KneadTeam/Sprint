@@ -1,13 +1,14 @@
 import './App.css';
 import { useState } from 'react';
 import AddStory from "./Components/AddStory/AddStory"
+import Overlay from './Components/Overlay/Overlay';
 import Stories from './Components/Story/Stories';
 import PBar from "./Components/Progress/PBar"
 
 function App() {
-  
-  // Number of User Stories
-  // const total_user_stories = 0;
+
+  // Overlay boolean
+  const [isOverlay, setOverlay] = useState(false)
 
   // Sample User Stories
   const [user_stories, setStories] = useState([
@@ -34,7 +35,6 @@ function App() {
   // Add a User Story
   function addStory(new_story){
     setStories(user_stories => [...user_stories, new_story])
-    // console.log('added user story: '+ new_story)
     console.log(new_story)
 
   }
@@ -51,8 +51,16 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        {/* Progress Bar */}
         <PBar></PBar>
-        <AddStory onAdd={addStory}></AddStory>
+
+        {/* Add Story in an Overlay */}
+        <button onClick={() => setOverlay(!isOverlay)}>Add User Story</button>
+        <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
+          <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
+        </Overlay>
+
+        {/* User Stories */}
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>

@@ -1,7 +1,7 @@
 // CONTENTS OF THIS SHOULD BE ON SEPARATE PAGE
 import { useState } from "react";
 
-function AddStory({ onAdd }) {
+function AddStory({ onAdd, cancelAdd }) {
   const [user_story, setStory] = useState('');
   const [points, setPoints] = useState('');
 
@@ -48,7 +48,7 @@ function AddStory({ onAdd }) {
 
       <p>
         <input type="submit" value="Save" />
-        <input type="button" value="Cancel" />
+        <input type="button" value="Cancel" onClick={cancelAdd}/>
       </p>
     </form>
   );

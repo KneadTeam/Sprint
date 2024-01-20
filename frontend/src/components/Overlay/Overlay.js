@@ -1,8 +1,11 @@
-function Overlay ( { isOpen, onClose } ){
+function Overlay ( { children, isOpen } ){
     return (
         <div>
            {isOpen ? 
-            <p>Overlay Test</p> 
+                <div className="overlay">
+                    <div className="overlay-bg"></div>
+                    {children}
+                </div> 
             : null}             
         </div>
     )
