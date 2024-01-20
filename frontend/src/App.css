@@ -5,3 +5,11 @@
   justify-content: center;
   margin-top: 2%;
 }
+
+.sprint-logo {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

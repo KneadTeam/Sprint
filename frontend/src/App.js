@@ -1,6 +1,5 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import {motion} from 'framer-motion';
 import AddStory from "./components/AddStory/AddStory"
 import Stories from './components/Story/Stories';
 import ProgressBar from "./components/Progress/progressbar";
@@ -63,8 +62,8 @@ function App() {
     <div className="App">
 
       <div className="container">
-        <img src={SprintLogo} alt="sprint logo" style={{ width: "30%", height: "auto", display: 'block', marginLeft: 'auto', marginRight: 'auto' }}/>
-        <ProgressBar value={40}/>
+        <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
+        <ProgressBar value={progress}/>
         <AddStory onAdd={addStory}></AddStory>
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
