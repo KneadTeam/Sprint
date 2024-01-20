@@ -52,8 +52,8 @@ function AddStory({ onAdd, cancelAdd }) {
       </div>
 
       <p>
-        <input type="submit" value="Save"/>
-        <input type="button" value="Cancel" onClick={cancelAdd}/>
+        <input type="submit" className="save-btn" value="Save"/> &emsp;
+        <input type="button" className="cancel-btn" value="Cancel" onClick={cancelAdd}/>
       </p>
     </form>
   );

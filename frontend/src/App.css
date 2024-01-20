@@ -31,3 +31,12 @@
   display: block;
   margin: 0 auto;
 }
+
+.add-story-button:hover {
+  transform: scale(1.1); 
+  background: linear-gradient(
+    180deg,
+    rgb(248, 134, 34) 0%,
+    rgb(219, 111, 17) 32%,
+    rgb(187, 91, 7) 100%);
+}
