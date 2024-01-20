@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import AddStory from "./components/AddStory/AddStory"
-import Overlay from './Components/Overlay/Overlay';
+import Overlay from './components/Overlay/Overlay';
 import Stories from './components/Story/Stories';
 import ProgressBar from "./components/Progress/progressbar";
 import SprintLogo from './sprint-logo.png';
