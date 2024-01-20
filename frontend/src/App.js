@@ -17,8 +17,7 @@ function App() {
     }
   }, [progress]);
 
-  // Overlay boolean
-  const [isOverlay, setOverlay] = useState(false)
+  const [isOverlay, setOverlay] = useState(false);
 
   // Number of User Stories
   // const total_user_stories = 0;
@@ -62,19 +61,12 @@ function App() {
     <div className="App">
 
       <div className="container">
-      <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
+        <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
         <ProgressBar value={progress}/>
-        {/* Progress Bar */}
-        
-        <PBar></PBar>
-
-        {/* Add Story in an Overlay */}
         <button onClick={() => setOverlay(true)}>Add User Story</button>
         <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
           <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
         </Overlay>
-
-        {/* User Stories */}
         {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>
