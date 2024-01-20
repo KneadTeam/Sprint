@@ -7,7 +7,7 @@ import ProgressBar from "./components/Progress/progressbar";
 import SprintLogo from "./assets/sprint-logo.png"
 
 function App() {
-
+  const baseUrl = "http://localhost:8000"
   // progress bar 
   const [progress, setProgress] = useState(0);
   const [isOverlay, setOverlay] = useState(false);
@@ -62,8 +62,24 @@ function App() {
   // Delete a User Story
   function deleteStory (id){
     setStories(user_stories.filter((user_story) => user_story.id !== id))
-    console.log('deleted user story: ' + id)
+    console.log('Deleted user story: ' + id)
   }
+
+  // Toggle the checkbox in a User Story
+  const toggleCompleteStory = (id, state) => {
+    console.log("toggled", id);
+    
+    const newState = !state;
+
+    fetch(baseUrl + "/story/" + id, {
+      method: 'PUT'
+    })
+      .then()
+      .catch(error => {
+        console.error('Error:', error)
+    });
+
+  };
 
   return (
     <div className="App">
@@ -75,7 +91,7 @@ function App() {
         <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
           <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
         </Overlay>
-        {user_stories.length > 0 ? <Stories stories={user_stories} onDelete={deleteStory}/> : "No User Stories Added"}
+        {user_stories.length > 0 ? <Stories stories={user_stories} onToggleCheckbox={toggleCompleteStory} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>
   );

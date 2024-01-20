@@ -42,7 +42,7 @@ function AddStory({ onAdd, cancelAdd }) {
         />
       </div>
       <div className='form-control'>
-        <label>Difficulty Level</label>
+        <label>Story Points</label>
         <input
           type="number"
           value={points}
