@@ -1,13 +1,24 @@
 import './App.css';
-import { useState } from 'react';
-import AddStory from "./components/AddStory/AddStory";
-import Stories from "./components/Story/Stories";
-import PBar from "./components/Progress/PBar";
+import { useState, useEffect } from 'react';
+import AddStory from "./components/AddStory/AddStory"
+import Stories from './components/Story/Stories';
+import Overlay from './components/Overlay/Overlay';
+import ProgressBar from "./components/Progress/progressbar";
+import SprintLogo from './sprint-logo.png';
 
 function App() {
-
   const baseUrl = "http://localhost:8000"
-  
+  // progress bar 
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+
+    return () => {
+      
+    }
+  }, [progress]);
+
+  const [isOverlay, setOverlay] = useState(false);
+
   // Number of User Stories
   // const total_user_stories = 0;
 
@@ -36,7 +47,6 @@ function App() {
   // Add a User Story
   function addStory(new_story){
     setStories(user_stories => [...user_stories, new_story])
-    // console.log('added user story: '+ new_story)
     console.log(new_story)
 
   }
@@ -68,11 +78,15 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="container">
-        <PBar></PBar>
-        <AddStory onAdd={addStory}></AddStory>
-        
-        {user_stories.length > 0 ? <Stories stories={user_stories} onToggleCheckbox={toggleCompleteStory} onDelete={deleteStory}/> : "No User Stories Added!"}
+        <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
+        <ProgressBar value={progress}/>
+        <button onClick={() => setOverlay(true)}>Add User Story</button>
+        <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
+          <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
+        </Overlay>
+        {user_stories.length > 0 ? <Stories stories={user_stories} onToggleCheckbox={toggleCompleteStory} onDelete={deleteStory}/> : "No User Stories Added"}
       </div>
     </div>
   );

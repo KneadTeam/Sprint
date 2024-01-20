@@ -1,7 +1,7 @@
 // CONTENTS OF THIS SHOULD BE ON SEPARATE PAGE
 import { useState } from "react";
 
-function AddStory({ onAdd }) {
+function AddStory({ onAdd, cancelAdd }) {
   const [user_story, setStory] = useState('');
   const [points, setPoints] = useState('');
 
@@ -17,12 +17,16 @@ function AddStory({ onAdd }) {
       return;
     }
 
-    // onAdd({ user_story, points  }); Still dont
+    // Update list of stories with new story
     onAdd({ name: user_story, points: points, state: false});
 
     // Reset form to be empty
     setStory("");   
     setPoints("");
+
+    // Closes Add Story menu
+    cancelAdd();
+    
   };
 
   return (
@@ -47,8 +51,8 @@ function AddStory({ onAdd }) {
       </div>
 
       <p>
-        <input type="submit" value="Save" />
-        <input type="button" value="Cancel" />
+        <input type="submit" value="Save"/>
+        <input type="button" value="Cancel" onClick={cancelAdd}/>
       </p>
     </form>
   );

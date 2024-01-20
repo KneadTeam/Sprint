@@ -1,0 +1,27 @@
+.progressbar {
+
+    width: 70vw;
+    height: 15vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: stretch;
+
+    border-radius: 60px;
+    background-color: #494b52;
+    box-shadow: 0px 0px 20px #111;
+
+    overflow: hidden;
+}
+
+.bar {
+    width: 0%;
+    background: rgb(255, 174, 105);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 174, 105, 1) 0%,
+        rgba(255, 173, 102, 1) 32%,
+        rgba(255, 132, 25, 1) 100%
+    );
+}
