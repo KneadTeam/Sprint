@@ -10,14 +10,22 @@ function App() {
 
   // progress bar 
   const [progress, setProgress] = useState(0);
-  useEffect(() => {
-
-    return () => {
-      
-    }
-  }, [progress]);
-
   const [isOverlay, setOverlay] = useState(false);
+
+  useEffect(() => {
+    const fetchProgressData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/progress'); // Replace with your API endpoint
+        const data = await response.json();
+        setProgress(data.progress); // Update state with fetched progress data
+      } catch (error) {
+        console.error('Error fetching progress data:', error);
+      }
+    };
+
+    fetchProgressData();
+  }, []);
+
 
   // Number of User Stories
   // const total_user_stories = 0;
@@ -66,7 +74,7 @@ function App() {
       <div className="container">
         <img src={SprintLogo} alt="sprint logo" className="sprint-logo" />
         <ProgressBar value={progress}/>
-        <button onClick={() => setOverlay(true)}>Add User Story</button>
+        <button className='add-story-button' onClick={() => setOverlay(true)}>Add User Story</button>
         <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
           <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
         </Overlay>
