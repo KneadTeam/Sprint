@@ -17,12 +17,16 @@ function AddStory({ onAdd, cancelAdd }) {
       return;
     }
 
-    // onAdd({ user_story, points  }); Still dont
+    // Update list of stories with new story
     onAdd({ name: user_story, points: points, state: false});
 
     // Reset form to be empty
     setStory("");   
     setPoints("");
+
+    // Closes Add Story menu
+    cancelAdd();
+    
   };
 
   return (
@@ -47,7 +51,7 @@ function AddStory({ onAdd, cancelAdd }) {
       </div>
 
       <p>
-        <input type="submit" value="Save" />
+        <input type="submit" value="Save"/>
         <input type="button" value="Cancel" onClick={cancelAdd}/>
       </p>
     </form>

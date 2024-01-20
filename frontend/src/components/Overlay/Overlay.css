@@ -1,0 +1,34 @@
+.overlay-bg {
+    background-color: gray;
+    /* Screen size */
+    width: 100vw;
+    height: 100vh;
+    /* Positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Stack Order */
+    z-index: 1;
+}
+
+.overlay-content {
+    background-color: white;
+    /* Screen size */   
+    width: 25vw;
+    height: 25vh;
+    /* Positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Stack Order */
+    z-index: 2;
+    /* Shape and Size */
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 25px;
+    margin-top: 10%;
+
+}

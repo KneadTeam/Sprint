@@ -55,7 +55,7 @@ function App() {
         <PBar></PBar>
 
         {/* Add Story in an Overlay */}
-        <button onClick={() => setOverlay(!isOverlay)}>Add User Story</button>
+        <button onClick={() => setOverlay(true)}>Add User Story</button>
         <Overlay isOpen={isOverlay} onClose={() => setOverlay(!isOverlay)}>
           <AddStory onAdd={addStory} cancelAdd={() => setOverlay(!isOverlay)}></AddStory>
         </Overlay>
