@@ -3,6 +3,7 @@ import { useState } from "react";
 function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDelete} ){
 
     const [check, setChecked] = useState(false);
+    const [checkHovered, setCheckHovered] = useState(false);
     const [editIsHovered, setEditIsHovered] = useState(false);
     const [deleteIsHovered, setDeleteIsHovered] = useState(false);
 
@@ -20,7 +21,7 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
                     : "4px solid"),
             borderRadius: "25px",
             justifyContent: "left",
-            background: "rgba(255, 213, 128, 0.4)",
+            background: "rgba(255, 213, 128, 0.5)",
 
         },
         storyText: {
@@ -38,7 +39,6 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
             width: "25px",  
             height: "25px", 
             borderRadius: "5px", 
-            backgroundColor: "green",
         },
         edit: {
             padding: "10px 15px",
