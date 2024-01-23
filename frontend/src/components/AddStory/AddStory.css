@@ -32,5 +32,32 @@ p {
 }
 
 /* Button stuff */
+.save-btn, .cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 174, 105, 1) 0%,
+      rgba(255, 173, 102, 1) 32%,
+      rgba(255, 132, 25, 1) 100%);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    font-size: 15px;
+    display: block;
+    margin: 0 auto;
+  }
+
+.save-btn:hover, .cancel-btn:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(
+      180deg,
+      rgb(248, 134, 34) 0%,
+      rgb(219, 111, 17) 32%,
+      rgb(187, 91, 7) 100%);
+
+}
 
   
