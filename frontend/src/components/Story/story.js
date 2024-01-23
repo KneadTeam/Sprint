@@ -35,6 +35,7 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
             textShadow: '1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5)',
         },
         name: {
+            textDecorationLine: 'underline',
         },
         points: {
             fontSize: '15px',
