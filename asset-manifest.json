@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Sprint/static/css/main.091f0d97.css",
+    "main.js": "/Sprint/static/js/main.6249427a.js",
+    "static/js/787.d4aba7ab.chunk.js": "/Sprint/static/js/787.d4aba7ab.chunk.js",
+    "static/media/sprint-logo-wbg.png": "/Sprint/static/media/sprint-logo-wbg.afffe356d74e48dc79a4.png",
+    "static/media/sprint-logo.png": "/Sprint/static/media/sprint-logo.fa5c8f433ce0a9d10d12.png",
+    "index.html": "/Sprint/index.html",
+    "main.091f0d97.css.map": "/Sprint/static/css/main.091f0d97.css.map",
+    "main.6249427a.js.map": "/Sprint/static/js/main.6249427a.js.map",
+    "787.d4aba7ab.chunk.js.map": "/Sprint/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.091f0d97.css",
+    "static/js/main.6249427a.js"
+  ]
+}
