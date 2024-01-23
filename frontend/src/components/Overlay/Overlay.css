@@ -12,7 +12,7 @@
 }
 
 .overlay-content {
-    background-color: white;
+    background: rgb(239, 219, 183);
     /* Screen size */   
     width: 25vw;
     height: 25vh;
@@ -35,7 +35,7 @@
     border: 5px solid orange;
 }
 
-.sprint-logo2 {
+.sprint-logo-wbg {
     width: 175px;
     height: 175px;
     display: block;
@@ -43,6 +43,6 @@
     border-radius: 50%;
     border: 5px solid #d01619; /* Green border for a pop effect */
     box-shadow: 0 0 10px rgba(60, 64, 1, 0.5); /* Box shadow for the logo */
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
 }

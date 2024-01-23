@@ -1,5 +1,5 @@
 import "./Overlay.css"
-import SprintLogo2 from "../../assets/sprint-logo.png"
+import SprintLogoWBG from "../../assets/sprint-logo-wbg.png"
 
 function Overlay ( { children, isOpen, onClose } ){
     return (
@@ -8,7 +8,7 @@ function Overlay ( { children, isOpen, onClose } ){
                 <div className="overlay">
                     <div className="overlay-bg" onClick={onClose}></div>
                     <div className="overlay-content">
-                        <img src={SprintLogo2} alt="sprint logo" className="sprint-logo2" />
+                        <img src={SprintLogoWBG} alt="Sprint Logo" className="sprint-logo-wbg" />
                         {children}
                     </div>
                 </div> 

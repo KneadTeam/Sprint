@@ -26,8 +26,25 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
         },
         storyText: {
             textAlign: "left",
-            margin: "0 0 0 3vw"
+            margin: "0 0 0 3vw",
+            fontFamily: 'Georgia, serif',
         },
+        header: {
+            fontSize: '20px',
+            fontWeight: 'bold',
+            textShadow: '1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5)',
+        },
+        name: {
+        },
+        points: {
+            fontSize: '15px',
+            fontWeight: 'bold',
+            display: 'inline-block',
+            color: 'brown',
+            border: '2px outset orange',
+            borderRadius: '5px',
+            padding: '5px',
+        },    
         clickables: {
             marginLeft: "auto",
             marginRight: "3vw",
@@ -39,6 +56,7 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
             width: "25px",  
             height: "25px", 
             borderRadius: "5px", 
+            transform: checkHovered ? 'scale(1.2)' : null,
         },
         edit: {
             padding: "10px 15px",
@@ -50,7 +68,7 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
             fontWeight: "bold",
             margin: "50px 0px 50px 5px",
             transition: "background 0.3s",
-            // transform: editIsHovered ? scale(1.1) : null,
+            transform: editIsHovered ? 'scale(1.1)' : null,
             background: editIsHovered
                 ? "linear-gradient(180deg, rgb(248, 134, 34) 0%, rgb(219, 111, 17) 32%, rgb(187, 91, 7) 100%)"
                 : "linear-gradient(180deg, rgba(255, 174, 105, 1) 0%, rgba(255, 173, 102, 1) 32%, rgba(255, 132, 25, 1) 100%)",
@@ -65,7 +83,7 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
             fontWeight: "bold",
             margin: "50px 0px 50px 5px",
             transition: "background 0.3s",
-            // transform: editIsHovered ? scale(1.1) : null, 
+            transform: deleteIsHovered ? 'scale(1.1)' : null, 
             background: "linear-gradient(180deg, rgba(255, 174, 105, 1) 0%, rgba(255, 173, 102, 1) 32%, rgba(255, 132, 25, 1) 100%)",
         }
     };
@@ -74,15 +92,17 @@ function Story ( {story_id, story_name, points, checkbox, onToggleCheckbox, onDe
         <div className="story" style={styles.outerShell}>
             
             <div className="storyText" style={styles.storyText}>
-                <h3>User Story</h3>
-                <p> {story_name}</p>
-                <p> {points} Points</p>
+                <h3 style={styles.header}> User Story </h3>
+                <p  style={styles.name}> {story_name} </p>
+                <p  style={styles.points}> {points} Points</p>
             </div>
 
             <div style={styles.clickables}>
                 <input style={styles.checkbox} 
                     type="checkbox"
                     checked={checkbox}
+                    onMouseEnter={() => setCheckHovered(true)} 
+                    onMouseLeave={() => setCheckHovered(false)}
                     onChange={() => {
                         setChecked(!check);
                         onToggleCheckbox(story_id, checkbox);}}/>
